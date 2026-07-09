@@ -536,7 +536,81 @@
   .square-poster.c4{ background: linear-gradient(150deg, #000000, #1c1c1c); }
 
  
+  .music-tabs{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .music-tab{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--ink);
+    opacity: 0.6;
+    border: 1px solid var(--hair);
+    border-radius: 100px;
+    padding: 9px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+  }
+  .music-tab:hover{
+    opacity: 0.9;
+    border-color: var(--white);
+  }
+  .music-tab.active{
+    background: var(--white);
+    color: #000;
+    opacity: 1;
+    border-color: var(--white);
+  }
 
+  .track-list{
+    border-top: 1px solid var(--hair);
+    display: none;
+  }
+  .track-list.active{
+    display: block;
+  }
+  .track{
+    display: grid;
+    grid-template-columns: 40px 1fr auto auto;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 10px;
+    border-bottom: 1px solid var(--hair);
+    transition: background 0.2s ease;
+  }
+  .track:hover{ background: rgba(255,255,255,0.04); }
+  .track .idx{
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--cobalt);
+    font-size: 0.9rem;
+  }
+  .track .title{
+    color: var(--white);
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .track .artist{
+    display:block;
+    font-size: 0.82rem;
+    opacity: 0.6;
+    font-weight: 400;
+  }
+  .track .tag{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--white);
+    opacity: 0.7;
+  }
+  .track .len{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
 
   
   footer{
@@ -583,7 +657,7 @@
 <body>
 
   <header class="nav">
-    <div class="logo">Idk why am i<span></span> making ts</div>
+    <div class="logo">Idk why am i<span></span>making ts</div>
     <nav>
       <a href="#hobbies">Hobbies</a>
       <a href="#hobbies">Hobbies</a>
@@ -591,6 +665,7 @@
       <a href="#games">Games</a>
       <a href="#pc-games">PC Games</a>
       <a href="#media">Movies</a>
+      <a href="#music">Music</a>
     </nav>
   </header>
 
@@ -919,17 +994,139 @@
     </div>
   </section>
 
+  <section id="music">
+    <div class="section-head reveal">
+      <span class="num mono">06</span>
+      <h2>On Repeat</h2>
+      <div class="rule"></div>
+    </div>
 
+    <div class="music-tabs reveal">
+      <button class="music-tab active" data-target="tab-on-repeat">On Repeat</button>
+      <button class="music-tab" data-target="tab-fav-song">Fav Song</button>
+      <button class="music-tab" data-target="tab-fav-album">Fav Album</button>
+    </div>
+
+    <div class="track-list active" id="tab-on-repeat">
+      <div class="track reveal">
+        <span class="idx mono">01</span>
+        <div><span class="title">Color Your Night</span><span class="artist">Lotus Juice</span></div>
+        <span class="tag">on repeat</span>
+        <span class="len mono">3:47</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">02</span>
+        <div><span class="title">Merry Christmas, Please Dont Call</span><span class="artist">Bleachers</span></div>
+        <span class="tag">on repeat</span>
+        <span class="len mono">3:22</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">03</span>
+        <div><span class="title">Pijaraya</span><span class="artist">Soegi Bornean</span></div>
+        <span class="tag">on repeat</span>
+        <span class="len mono">4:22</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">04</span>
+        <div><span class="title">A Sorrowful Reunion</span><span class="artist">Reality Club</span></div>
+        <span class="tag">on repeat</span>
+        <span class="len mono">4:19</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">05</span>
+        <div><span class="title">Abadi - indo version</span><span class="artist">Dendi Nata</span></div>
+        <span class="tag">on repeat</span>
+        <span class="len mono">4:17</span>
+      </div>
+    </div>
+
+    <div class="track-list" id="tab-fav-song">
+      <div class="track reveal">
+        <span class="idx mono">01</span>
+        <div><span class="title">Louise</span><span class="artist">Tv Girl</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">3:15</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">02</span>
+        <div><span class="title">Fake Plastic Trees</span><span class="artist">Radiohead</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">4:50</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">03</span>
+        <div><span class="title">Heartbreak, Heartbreak</span><span class="artist">Shihoko Hirata</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">2:16</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">04</span>
+        <div><span class="title">Merry Christmas, Please Dont Call</span><span class="artist">Bleachers</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">3:22</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">05</span>
+        <div><span class="title">Isha's Song (这样很好)</span><span class="artist">Eason Chan</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">4:22</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">06</span>
+        <div><span class="title">If I Had A Gun</span><span class="artist">Noel Gallagher</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">4:47</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">07</span>
+        <div><span class="title">Enough For You</span><span class="artist">Reality Club</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">3:59</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">08</span>
+        <div><span class="title">Killer Queen</span><span class="artist">Queen</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">3:12</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">09</span>
+        <div><span class="title">Virus Tipe Hati</span><span class="artist">Jkt48</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">3:56</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">10</span>
+        <div><span class="title">Russian Roulette</span><span class="artist">Red Velvet</span></div>
+        <span class="tag">favorite</span>
+        <span class="len mono">3:32</span>
+      </div>
+    </div>
+
+    <div class="track-list" id="tab-fav-album">
+      <div class="track reveal">
+        <span class="idx mono">01</span>
+        <div><span class="title">Pablo Honey</span><span class="artist">Radiohead</span></div>
+        <span class="tag">favorite album</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">02</span>
+        <div><span class="title">French Exit</span><span class="artist">Tv Girl</span></div>
+        <span class="tag">favorite album</span>
+      </div>
+      <div class="track reveal">
+        <span class="idx mono">03</span>
+        <div><span class="title">Kereta Kencan</span><span class="artist">Hivi!</span></div>
+        <span class="tag">favorite album</span>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p>:3</p>
   </footer>
 
- 
-
-
   <script>
-   
     const revealEls = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -941,7 +1138,6 @@
     }, { threshold: 0.15 });
     revealEls.forEach(el => io.observe(el));
 
-   
     const viewBtn = document.getElementById('view-more-btn');
     const moreWrap = document.getElementById('more-games-wrap');
     
@@ -955,6 +1151,18 @@
         }
       });
     }
+
+    const musicTabs = document.querySelectorAll('.music-tab');
+    const trackLists = document.querySelectorAll('.track-list');
+
+    musicTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        musicTabs.forEach(t => t.classList.remove('active'));
+        trackLists.forEach(l => l.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
   </script>
 
 </body>
